@@ -1,5 +1,7 @@
 # Numerical-Methods
 
 
-https://user-images.githubusercontent.com/64583165/224562208-4b8156d5-87cd-4173-a629-3ec76b122c03.mov
+
+
+https://user-images.githubusercontent.com/64583165/224562309-19f914da-c7bf-4ac8-b1b4-f4b238fd8c79.mov
 
