@@ -12,7 +12,17 @@ t3 = Edges(2,1:7);
 B = sparse(Edges(2,:), Edges(1,:), 1, 7, 7);
 I = speye(N);
 L = sum(B);
-inversed = 1./L;
 
-A = spdiags(1./L);
+A = sparse(spdiags(1./L));
 
+M = sparse(I - d.*B.*A);
+b = ones(N,1);
+b(:,:) = (1 - d)/N;
+
+whos A B I M b;
+
+
+spy(B);
+title('Układ w macierzy B');
+xlabel("");
+print -dpng spy_b;
