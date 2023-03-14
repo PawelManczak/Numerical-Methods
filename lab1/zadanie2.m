@@ -26,3 +26,10 @@ spy(B);
 title('Układ w macierzy B');
 xlabel("");
 print -dpng spy_b;
+
+r = M\b;
+bar(r);
+title('Wartość PageRank dla poszczególnych stron w sieci');
+xlabel("Numer strony internetowej");
+ylabel("Wartość PageRank");
+print -dpng bar;

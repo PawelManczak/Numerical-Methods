@@ -2,7 +2,7 @@ clear all;
 close all;
 a = 12;
 r_max=a/2;
-n_max = 200;
+n_max = 400;
 n = 0;
 
 x_h = [];
