@@ -2,7 +2,7 @@ clear all;
 close all;
 a = 12;
 r_max=a/2;
-n_max = 400;
+n_max = 200;
 n = 0;
 
 x_h = [];
@@ -95,6 +95,7 @@ second = cumsum(n_of_tries);
 for i = 1:200
    second(i) = second(i)/i;
 end
+
 plot(linspace(1, 200, 200), second);
 xlabel("Liczba narysowanych okręgów");
 ylabel("Liczba losowań");
