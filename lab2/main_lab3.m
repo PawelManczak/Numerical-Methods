@@ -31,7 +31,8 @@ b(:,:) = (1 - d)/N;
 
 issparse(M)
 %-----------------
-
+% Zadanie C
+r = M\b;
 
 
 % Zadanie D
