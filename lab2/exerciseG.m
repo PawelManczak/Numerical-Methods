@@ -7,6 +7,8 @@ close all
 load('Dane_Filtr_Dielektryczny_lab3_MN.mat');
 
 r1 = M\b;
+res = M*r1 - b;
+normRes1 = norm(res);
 %disp(r1);
 
 % 2

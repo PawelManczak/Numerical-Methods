@@ -1,0 +1,3 @@
+Norma błędu rezydualnego dla metody bezpośredniej to 6.96886540575031e-13.
+
+Dla metody Jacobiego i Gaussa-Seidla możemy zauważyć, że dla każdej kolejnej iteracjii norma rośnie. Wynika z tego to, że metody iteracyjne nie zbiegają się.
