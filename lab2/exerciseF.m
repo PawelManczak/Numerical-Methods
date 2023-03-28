@@ -34,14 +34,14 @@ for i = 1:5
     % która określa najbardziej odpowiedni
     % algorytm do wyznaczenia rozwiązania.
 
-    factor1 = -D \(L + U);
-    factor2 = D \ b;
+    factor1 = -(D + L);
+    factor2 = (D + L) \ b;
   
   
   tic
   while(true)
     number_of_iterations(i) = number_of_iterations(i) + 1;
-    r = factor1*r + factor2;
+    r = factor1 \ (U*r) + factor2;
     res = M*r - b;
 
     if i == 2 % 1000
@@ -59,13 +59,13 @@ plot(N, time)
 title("czas wyznaczenia rozwiązania w zależności od N");
 ylabel("Czas [s]");
 xlabel("Rozmiar macierzy");
-saveas(gcf, 'zadanieE_czas.png');
+saveas(gcf, 'zadanieF_czas.png');
 
 plot(N, number_of_iterations)
 title("liczba iteracji wymagana do osiągnięcia rozwiązania w zależności od N");
 ylabel("Liczba iteracji");
 xlabel("Rozmiar macierzy");
-saveas(gcf, 'zadanieE_iteracje.png');
+saveas(gcf, 'zadanieF_iteracje.png');
 
 % semilogy (oś y w skali logarytmicznej) 
 temp = linspace(1, number_of_iterations(2), number_of_iterations(2));
@@ -73,5 +73,5 @@ semilogy(temp, resy)
 title('norma błędu rezydualnego dla kolejnych iteracji dla rozmiaru macierzy N = 1000')
 ylabel("norma błędu rezydualnego");
 xlabel("Nr iteracjii");
-saveas(gcf, 'zadanieE_norma.png');
+saveas(gcf, 'zadanieF_norma.png');
 %------------------
