@@ -40,18 +40,41 @@ r = M\b;
 clc
 clear all
 close all
-
+d = 0.85;
 N = [500, 1000, 3000, 6000, 12000];
 
 
 for i = 1:5
+    density = 3; % parametr decydujacy o gestosci polaczen miedzy stronami
+    [Edges] = generate_network(N(i), density);
+
+    B = sparse(Edges(2,:), Edges(1,:), 1, N(i), N(i));
+    I = speye(N(i));
+    L = sum(B);
+
+    A = sparse(spdiags(1./L));
+
+    M = sparse(I - d.*B.*A);
+    b = ones(N(i),1);
+    b(:,:) = (1 - d)/N(i);
+    
     tic
     % obliczenia start
-
+    r = M\b;
     % obliczenia stop
     czas_Gauss(i) = toc;
 end
+
 plot(N, czas_Gauss)
+figure(1);
+
+title("Zadanie D");
+ylabel("czas rozwiązywania równania macierzowego [s]");
+xlabel("Rozmiar macierzy");
+saveas(gcf, 'zadD.png');
+
+
+
 %------------------
 
 

@@ -18,7 +18,8 @@ density = 3; % parametr decydujacy o gestosci polaczen miedzy stronami
 % generacja macierzy I, A, B i wektora b
 % macierze A, B i I musza byc przechowywane w formacie sparse (rzadkim)
 
-B = sparse(Edges(2,:), Edges(1,:), 1, 7, 7);
+d = 0.85;
+B = sparse(Edges(2,:), Edges(1,:), 1, N, N);
 I = speye(N);
 L = sum(B);
 
@@ -28,9 +29,10 @@ M = sparse(I - d.*B.*A);
 b = ones(N,1);
 b(:,:) = (1 - d)/N;
 
-
+issparse(M)
 %-----------------
-
+% Zadanie C
+r = M\b;
 
 
 % Zadanie D
