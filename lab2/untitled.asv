@@ -1,0 +1,72 @@
+ %Zadanie E
+%------------------
+clc
+clear all
+close all
+
+N = [500, 1000, 3000, 6000, 12000];
+density = 10;
+d = 0.85;
+threshold = 10^(-14); 
+
+for i = 1:5
+    [Edges] = generate_network(N(i), density);
+
+    B = sparse(Edges(2,:), Edges(1,:), 1, N(i), N(i));
+    I = speye(N(i));
+    L = sum(B);
+
+    A = sparse(spdiags(1./L));
+
+    M = sparse(I - d.*B.*A);
+    b = ones(N(i),1);
+    b(:,:) = (1 - d)/N(i);
+  
+    % starting values
+    r = ones(N(i), 1);
+    D = diag(diag(M));
+    U = triu(M, 1);
+    L = tril(M, -1);
+
+    iterations(i) = 0;
+  
+    % W Matlabie operator \ wywołuje procedurę, 
+    % która określa najbardziej odpowiedni
+    % algorytm do wyznaczenia rozwiązania.
+    
+    factor1 = -D \(L + U);
+    factor2 = D \ b;
+  
+  
+  tic
+  while(true)
+    iterations(i) = iterations(i) + 1;
+    r = comp1*r + comp2;
+    res = M*r - b;
+    resy(i, iterations(i)) = norm(res);
+    if(norm(res) <= threshold)
+      break
+    end
+  end
+
+  czas_Jacobi(i) = toc;
+end
+
+plot(N, czas_Jacobi)
+title("Zadanie E - czas analizy");
+ylabel("Czas [s]");
+xlabel("Rozmiar macierzy");
+saveas(gcf, 'zadE_index_1.png');
+
+plot(N, iterations)
+title("Zadanie E - liczba iteracji");
+ylabel("Liczba iteracji");
+xlabel("Rozmiar macierzy");
+saveas(gcf, 'zadE_index_2.png');
+
+semilogy(resy(2, 1:iterations(2)));
+title('Zadanie E - norma z residuum dla kolejnych iteracji dla rozmiaru macierzy N = 1000')
+ylabel("Norma z residuum");
+xlabel("Nr iteracji");
+saveas(gcf, 'zadE_index_3.png');
+%------------------
