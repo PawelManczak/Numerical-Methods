@@ -45,7 +45,7 @@ N = [500, 1000, 3000, 6000, 12000];
 
 
 for i = 1:5
-    density = 3; % parametr decydujacy o gestosci polaczen miedzy stronami
+    density = 10; % parametr decydujacy o gestosci polaczen miedzy stronami
     [Edges] = generate_network(N(i), density);
 
     B = sparse(Edges(2,:), Edges(1,:), 1, N(i), N(i));
@@ -81,51 +81,7 @@ saveas(gcf, 'zadD.png');
 
 % Zadanie E
 %------------------
-clc
-clear all
-close all
 
-d = 0.85;
-N = [500, 1000, 3000, 6000, 12000];
-accuracy = 10^(-14);
-
-r = ones(N(i), 1);
-  D = diag(diag(M));
-  U = triu(M, 1);
-  L = tril(M, -1);
-
-  iterations(i) = 0;
-  
-  comp1 = -D \(L + U);
-  comp2 = D \ b;
-
-% sprawdz przykladowe dzialanie funkcji tril, triu, diag:
-%Z = rand(4,4);
-%tril(Z,-1) ;
-%triu(Z,1) ;
-%diag(diag(Z));
-
-
-for i = 1:5
-    tic
-    density = 3; % parametr decydujacy o gestosci polaczen miedzy stronami
-    [Edges] = generate_network(N(i), density);
-
-    B = sparse(Edges(2,:), Edges(1,:), 1, N(i), N(i));
-    I = speye(N(i));
-    L = sum(B);
-
-    A = sparse(spdiags(1./L));
-
-    M = sparse(I - d.*B.*A);
-    b = ones(N(i),1);
-    b(:,:) = (1 - d)/N(i);
-
-    % obliczenia start
-    
-    % obliczenia stop
-    czas_Jacobi(i) = toc;
-end
 %plot(N, czas_Jacobi)
 %------------------
 
