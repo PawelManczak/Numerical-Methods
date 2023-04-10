@@ -71,4 +71,21 @@ ylabel("Różnica pomiędzy pomiędzy nową, a starą wartością prędkości k�
 xlabel("Numer iteracji");
 saveas(gcf, 'ex2SecantDiff.png');
 
+% 3 bisection
+
+[xvect, xdif, fx, it_cnt] = bisection(@speed,0,50,10^-12);
+
+figure(9);
+semilogy(1:it_cnt, xvect)
+title("1. Wartość kolejnego przybliżenia rozwiązania T w kolejnych iteracjach przy użyciu metody bisekcji");
+ylabel("Przybliżona wartość czasu T[s]");
+xlabel("Numer iteracji");
+saveas(gcf, 'ex3BisectionValues.png');
+
+figure(10);
+plot(1:it_cnt, xdif)
+title("1. Zmiany wartości przybliżonego rozwiązania T  w kolejnych iteracjach przy użyciu metody bisekcji");
+ylabel("Różnica pomiędzy nową, a starą wartością T[s]");
+xlabel("Numer iteracji");
+saveas(gcf, 'ex3BisectionDiff.png');
 
