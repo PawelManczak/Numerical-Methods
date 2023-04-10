@@ -89,3 +89,26 @@ ylabel("Różnica pomiędzy nową, a starą wartością T[s]");
 xlabel("Numer iteracji");
 saveas(gcf, 'ex3BisectionDiff.png');
 
+% 3 secant
+
+
+[xvect, xdif, fx, it_cnt] = secant(@speed,0,50,10^-12);
+
+xvect = xvect(2:end);
+figure(11);
+semilogy(1:(it_cnt-1), xvect);
+%symlog(xvect, 1:it_cnt, 0.01);
+title("1. Wartość kolejnego przybliżenia rozwiązania T w kolejnych iteracjach przy użyciu metody siecznych");
+ylabel("Przybliżona wartość czasu T[s]");
+xlabel("Numer iteracji");
+saveas(gcf, 'ex3SecantValues.png');
+
+
+figure(12);
+plot(1:it_cnt, xdif)
+title("1. Zmiany wartości przybliżonego rozwiązania T  w kolejnych iteracjach przy użyciu metody siecznych");
+ylabel("Różnica pomiędzy nową, a starą wartością T[s]");
+xlabel("Numer iteracji");
+saveas(gcf, 'ex3SecantDiff.png');
+
+
