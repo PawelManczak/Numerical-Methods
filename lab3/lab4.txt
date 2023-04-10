@@ -1,0 +1,11 @@
+Funkcja fzero została użyta w celu znalezienia zera funkcji tangens w przedziale [6-epsilon, 6+epsilon], gdzie epsilon to mała wartość dodatnia.
+
+Na początku została wykonana procedura poszukiwania przedziału, w którym występuje zmiana znaku funkcji tangens. Następnie w przedziale [5.66059, 6.33941] została znaleziona wartość argumentu, dla której funkcja tangens przyjmuje wartość zero. Otrzymaną wartość wynosi 6.28319.
+Wynik ten jest zgodny z teoretycznym rozwiązaniem problemu, ponieważ funkcja tangens ma okres równy 2π, co oznacza, że zera funkcji tangens są wielokrotnościami tej wartości.
+Użyto metody
+
+
+
+W pierwszej części wykonywana była procedura poszukiwania przedziału zawierającego zmianę znaku wokół liczby 4,5. W tej procedurze w 3 iteracjach został znaleziony przedział [4.24544, 4.75456], w którym następnie została wykonana procedura poszukiwania zera.
+
+W drugiej części, w przedziale [4.24544, 4.75456], wykonano procedurę poszukiwania zera. Metoda bisekcji i interpolacji były używane na zmianę, co pozwoliło na znalezienie rozwiązania w 57 iteracjach.
