@@ -22,8 +22,9 @@ for i = 1:1000
     xvect(i) = c;
     xdif(i) = abs(old - fc);
     fx(i) = fc;
+    old = c;
 
-    if(abs(fc) < eps)
+    if(abs(fc) < eps || abs(a - b) < eps)
         break;
     elseif fc*feval(fun, a) < 0
         b = c;
