@@ -20,7 +20,7 @@ for i = 1:1000
     
     it_cnt = i;
     xvect(i) = c;
-    xdif(i) = abs(old - fc);
+    xdif(i) = abs(old - c);
     fx(i) = fc;
     old = c;
 
