@@ -1,0 +1,5 @@
+Dla interpolacji wielomianowej, zwiększenie liczby punktów pomiarowych K prowadzi do malejącej zbieżności interpolacji. Warto zwrócić uwagę, że zbieżność interpolacji spada szybciej niż w przypadku interpolacji trygonometrycznej. Oznacza to, że w przypadku interpolacji wielomianowej, dodanie kolejnych punktów pomiarowych nie przyczyni się w znaczący sposób do poprawy jakości interpolacji.
+
+Dla interpolacji trygonometrycznej, zwiększenie liczby punktów pomiarowych K prowadzi do zwiększenia zbieżności interpolacji. W tym przypadku zbieżność interpolacji spada wolniej niż w przypadku interpolacji wielomianowej. Oznacza to, że w przypadku interpolacji trygonometrycznej, dodanie kolejnych punktów pomiarowych przyczyni się do poprawy jakości interpolacji w większym stopniu niż w przypadku interpolacji wielomianowej.
+
+Warto zauważyć, że dla obu metod interpolacyjnych, zbieżność interpolacji zaczyna się znacząco zmniejszać wraz z kolejnymi iteracjami. Oznacza to, że warto rozważyć dokładnie liczbę punktów pomiarowych, którą chcemy użyć do interpolacji, ponieważ dodanie kolejnych punktów może nie przynieść poprawy jakości interpolacji, a tylko zwiększyć czas obliczeń.
