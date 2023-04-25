@@ -1,13 +1,10 @@
-% Ustawienie wartości K
+clear all; close all; clc;
+
 K = [5, 15, 25, 35];
 
-% Pętla po wartościach K
 for i = 1:length(K)
-    % Generowanie toru ruchu łazika i wartości próbek
     [x, y, f, xp, yp] = lazik(K(i));
-    
-    
-    
+       
     % Interpolacja wielomianowa
     p = polyfit2d(x, y, f);
     [XX, YY] = meshgrid(linspace(0, 1, 101));

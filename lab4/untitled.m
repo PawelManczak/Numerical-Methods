@@ -1,3 +1,5 @@
+clear all; close all; clc;
+
 max_diff_poly = [];
 max_diff_trig = [];
 
