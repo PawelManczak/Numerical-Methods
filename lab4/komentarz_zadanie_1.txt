@@ -1,0 +1,3 @@
+Zarówno dla interpolacji wielomianowej jak i interpolacji trygonometrycznej wraz ze wzrostem wartości K można zaobserwować coraz większą dokładność wyznaczanej funkcji.
+Przybliżenia interpolacji wielomianowej zdają się pogarszać po przekroczeniu pewnej granicy, 
+W przypadku interpolacji trygonometrycznej nie widać takiej zależności, daję dokładniejsze rezultaty. 
