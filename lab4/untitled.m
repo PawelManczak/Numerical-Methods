@@ -29,8 +29,8 @@ title('Zbieżność interpolacji wielomianowej');
 ylabel('Maksymalna wartość różnicy interpolowanych funkcji');
 xlabel('Liczba pomiarów - K');
 print(gcf, 'zbieznosc_interpolacji_wielomianowej.png', '-dpng', '-r450');
-
-plot(6:45, max_diff_trig);
+figure;
+semilogy(6:45, max_diff_trig);
 title('Zbieżność interpolacji trygonometrycznej');
 ylabel('Maksymalna wartość różnicy interpolowanych funkcji');
 xlabel('Liczba pomiarów - K');
